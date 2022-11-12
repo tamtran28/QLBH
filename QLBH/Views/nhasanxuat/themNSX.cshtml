@@ -1,0 +1,38 @@
+﻿
+@{
+    Layout = null;
+}
+
+<form action="themNSX" method="post">
+    <div class="form-horizontal">
+        <h2>
+            Them nha san xuat
+        </h2>
+        <div class="form-group">
+            <b>
+                Ma nha san xuat
+            </b><br />
+            <input name="mansx" type="text" value="" maxlength="50" /><br />
+        </div>
+        <div class="form-group">
+            <b>
+                Ten san xuat
+            </b><br />
+            <input name="tennsx" type="text" value="" maxlength="50" /><br />
+        </div>
+        <div class="form-group">
+            <b>
+                Dia chi
+            </b><br />
+            <input name="diachi" type="text" value="" maxlength="50" /><br />
+        </div>
+        <div class="form-group">
+
+            <input type="submit" value="save" /><br />
+        </div>
+        <div>
+            <a href="@Url.Action("Index")">Quay lại</a>
+        </div>
+    </div>
+
+</form>

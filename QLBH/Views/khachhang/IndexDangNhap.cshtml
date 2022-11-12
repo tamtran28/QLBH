@@ -1,0 +1,55 @@
+﻿
+@model QLBH.Models.khachhang
+@{
+    ViewBag.Title = "Đăng nhập";
+    Layout = "~/Views/_LayoutPage1.cshtml";
+} <
+<h2>Đăng nhập hệ thống</h2>
+@using (Html.BeginForm("dangnhap", "khachhang", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            <div class="control-label">
+                <span class="font-weight-bold">Tên tài khoản</span>
+            </div>
+            <div class="col-md-6">
+                @Html.EditorFor(model => model.makh, new { htmlAttributes= new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.makh, "", new {
+                @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="control-label">
+                <span class="font-weight-bold">Mật khẩu</span>
+            </div>
+            <div class="col-md-3">
+                @Html.PasswordFor(model => model.password, new {
+                htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.password, "",
+                new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-6">
+                <input type="submit" value="Đăng nhập" class="btn btnprimary" />
+            </div>
+        </div>
+        @if (ViewBag.kiemtraDangnhap != null &&
+        (bool)ViewBag.kiemtraDangnhap == false)
+        {
+            <div class="form-group">
+                <div class="control-label col-md-12">
+                    <span class="font-weight-bold text-danger">
+                        Bạn nhập
+                        "Tên tài khoản" hay "Mật khẩu" bị sai!
+                    </span>
+                </div>
+            </div>
+        }
+    </div>
+} <div>
+@Html.ActionLink("Trở về", "index", "nhanvien")
+</div>

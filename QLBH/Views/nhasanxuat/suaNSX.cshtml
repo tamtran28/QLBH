@@ -1,0 +1,35 @@
+﻿@using QLBH.Models;
+@{
+    Layout = null;
+}
+
+<form action="suaNSX" method="post">
+    <div class="form-horizontial">
+        <h2>
+            Sua thong tin nha san xuat
+        </h2>
+        @{
+            nhasanxuat n = ViewBag.nsx;
+        }
+        <div class="form-group">
+            <input name="mansx" type="hidden" value="@n.mansx" maxlength="50" /><br />
+        </div>
+        <div class="form-group">
+            <input name="tennsx" type="type" value="@n.tennsx" maxlength="50" /><br />
+        </div>
+        <div class="form-group">
+            <input name="diachi" type="type" value="@n.diachi" maxlength="50" /><br />
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Luu" />
+        </div>
+        <br />
+        <div>
+            <a href="@Url.Action("Index")">Quay lai</a>"
+        </div>
+
+    </div>
+
+    </div>
+
+</form>

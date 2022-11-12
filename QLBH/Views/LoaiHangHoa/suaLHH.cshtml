@@ -1,0 +1,29 @@
+﻿@using QLBH.Models;
+@{
+    Layout = null;
+} 
+<form action="suaLHH" method="post">
+<div class="form-horizontal">
+    <h2>Sửa thông tin loai hang hoa</h2>
+    @{
+        loaihanghoa n = ViewBag.lhh;
+    } 
+    <div class="form-group">
+    @*name trùng với tên field được binding*@
+    <input name="maloai" type="hidden" value="@n.maloai" maxlength="50" /><br />
+    </div>
+    <div class="form-group">
+    <b>Tên nhà sản xuất</b><br />
+    <input name="tenloai" type="text" value="@n.tenloai" maxlength="50" /><br />
+    </div>
+
+    <br />
+    <div class="form-group">
+         <input type="submit" value="Lưu" />
+    </div>
+    <br />
+    <div>
+    <a href="@Url.Action("Index")">Quay lại</a>
+    </div>
+</div>
+</form>

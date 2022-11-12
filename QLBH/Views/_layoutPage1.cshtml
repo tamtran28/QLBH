@@ -1,0 +1,110 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="~/Scripts/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="card">
+            <div class="card-header bg-secondary text-white">
+                Header
+            </div>
+            <div class="card-title">
+                <div class="row">
+                    <div class="col-8">
+                        <div class="nav nav-tabs">
+                            <div class="nav-item bg-primary">
+                                <div class="nav-link">
+                                    <a href="@Url.Action("Index","Home")"
+                                       class="text-white">Trang chủ</a>
+                                </div>
+                            </div>
+                            <div class="nav-item bg-primary">
+                                <div class="nav-link">
+                                    @Html.ActionLink("Trang chủ", "Index",
+                                    "Home", null, new { @class = "text-white" })
+                                </div>
+                            </div>
+                            <div class="nav-item bg-primary">
+                                <div class="nav-link">
+                                    @Html.ActionLink("Trang chủ", "Index",
+                                    "Home", null, new { @class = "text-white" })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="nav nav-tabs float-right">
+                            <div class="nav-item bg-primary">
+                                <div class="nav-link">
+                                    @Html.ActionLink("Trang chủ", "Index",
+                                    "Home", null, new { @class = "text-white" })
+                                </div>
+                            </div>
+                            <div class="nav-item bg-primary">
+                                <div class="nav-link">
+                                    @if (Session["dangnhap"] == null)
+                                    {
+                                        <a href="@Url.Action("indexDangNhap","khachhang")" class="text-white">Dang nhap</a>
+                                    }
+                                    else
+                                    {
+                                        <a href="@Url.Action("dangxuat","khachhang")" class="text-white">Dang xuat</a>
+                                    }
+                                </div>
+                            </div>
+                            <div class="nav-item bg-primary">
+                                <div class="nav-link">
+                                    @if (Session["dangnhap"] == null)
+                                    {
+                                        <a href="@Url.Action("dangky","khachhang")" class="text-white">Dang ky</a>
+                                    }
+                                    else
+                                    {
+                                        QLBH.Models.khachhang kh = Session["dangnhap"] as QLBH.Models.khachhang;
+                                        <span>@kh.tenkh</span>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                   
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="list-group">
+                            <div class="list-group-item bg-info">
+                                <a href="@Url.Action("index","nhasanxuat")" class="text-white">Quan ly nha san xuat</a>
+                            </div>
+                            <div class="list-group-item bg-info">
+                                <a href="@Url.Action("index","Nhanvien")" class="text-white">Quan ly nhan vien</a>
+                            </div>
+                            <div class="list-group-item bg-info">
+                                <a href="@Url.Action("index","loaihanghoa")" class="text-white">Quan ly loai hang hoa</a>
+                            </div>
+                            <div class="list-group-item bg-info">
+                                <a href="@Url.Action("index","hanghoa")" class="text-white">Quan ly hang hoa</a>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-md-9 bg-light">
+                        @RenderBody()
+                    </div>
+                
+                
+            </div>
+                  
+       
+            </div>
+            <div class="card-footer bg-secondary text-white">
+                Footer
+            </div>
+        </div>
+    </div>
+</body>
+</html>

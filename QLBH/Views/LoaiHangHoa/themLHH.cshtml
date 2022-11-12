@@ -1,0 +1,31 @@
+﻿
+@{
+    Layout = null;
+}
+
+<form action="themLHH" method="post">
+    <div class="form-horizontal">
+        <h2>
+            Them loai hang hoa
+        </h2>
+        <div class="form-group">
+            <b>
+                ma hang hoa
+            </b><br />
+            <input name="maloai" type="text" value="" maxlength="50" /><br />
+            <div class="form-group">
+                <b>
+                    ten hang hoa
+                </b><br />
+                <input name="tenloai" type="text" value="" maxlength="50" /><br />
+            </div>
+            <div class="form-group">
+
+                <input type="submit" value="save" /><br />
+            </div>
+            <div>
+                <a href="@Url.Action("Index")">Quay lại</a>
+            </div>
+        </div>
+     </div>
+</form>

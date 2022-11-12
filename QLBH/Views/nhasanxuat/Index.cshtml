@@ -1,0 +1,42 @@
+﻿
+@model IEnumerable<QLBH.Models.nhasanxuat>
+@{
+    Layout = "~/Views/_layoutPage1.cshtml";
+}
+<h2>Thong tin  nha san xuat</h2>
+<a href="@Url.Action("themNSX")">Thêm mới</a>
+<table border="1" cellpadding="5" cellspacing="0">
+    <tr>
+        <th>
+            Ten nha san xuat
+        </th>
+        <th>
+            Dia chi
+        </th>
+        <th>
+            Tac vu
+        </th>
+    </tr>
+    @{
+        foreach (var item in ViewBag.nsx)
+        {
+            <tr>
+                <td>
+                    @item.tennsx
+                </td>
+                <td>
+                    @item.diachi
+                </td>
+                <td>
+                    <a href="@Url.Action("suaNSX", "nhasanxuat", new { id = item.mansx })">Sua</a>|
+                    <a href="@Url.Action("xoaNSX", "nhasanxuat", new { id = item.mansx })">Xoa</a>
+                </td>
+            </tr>
+        }
+    }
+
+
+</table>
+<div>
+    <a href="@Url.Action("Index","Home")">Quay lại</a>
+</div>

@@ -1,0 +1,43 @@
+﻿
+@using QLBH.Models
+@{
+
+    Layout = null;
+}
+
+
+<h2>Xóa thông tin loai hang hoa</h2>
+<h3>Bạn muốn xóa loai hang hoa này ?</h3>
+<form method="post">
+    <div class="form-group">
+        <table border="1" cellpadding="5" cellspacing="0">
+            <tr>
+                <th>ma hang hoa</th>
+                <th>ten hang hoa</th>
+
+            </tr>
+            <tr>
+                @{
+                   loaihanghoa n = ViewBag.lhh;
+                }
+                <td>
+                    <label for="mailoai">@n.maloai </label>
+                </td>
+
+                <td>
+                    <label for="tenloai">@n.tenloai </label>
+                </td>
+               
+            </tr>
+        </table>
+    </div>
+    <br />
+    <div class="form-group">
+        <input type="submit" value="Xóa" />
+    </div>
+    <br />
+    <div>
+        <a href="~/Controllers/HomeController.cs/index.cshml">Quay lại</a>
+    </div>
+</form>
+

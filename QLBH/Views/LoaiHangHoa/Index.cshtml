@@ -1,0 +1,39 @@
+﻿@{
+    Layout = null;
+}
+<h2>Thong tin  Loai hang Hoa</h2>
+<a href="@Url.Action("themLHH")">Thêm mới</a>
+<table border="1" cellpadding="5" cellspacing="0">
+    <tr>
+        <th>
+            ma loai hang hoa
+        </th>
+        <th>
+            ten loai
+        </th>
+        <th>
+            Tac vu
+        </th>
+
+    </tr>
+    @{
+        foreach (var item in ViewBag.lhh)
+        {
+            <tr>
+                <td>
+                    @item.maloai
+                </td>
+                <td>
+                    @item.tenloai
+                </td>
+                <td>
+                    <a href="@Url.Action("suaLHH","loaihanghoa",new {id=item.maloai })">Sua</a>|
+                    <a href="@Url.Action("xoaLHH","loaihanghoa",new {id=item.maloai })">Xoa</a>|
+                </td>
+            </tr>
+        }
+    }
+</table>
+<div>
+    <a href="@Url.Action("Index","Home")">Quay lại</a>
+</div>
